@@ -1,3 +1,7 @@
+var jumpTimer = 0;
+var cursors;
+var jumpButton;
+
 function createKeys() {
   // ==================================================================
   // Create game buttons
@@ -53,12 +57,45 @@ function playerMovement() {
 
   if (jumpButton.isDown && player.body.onFloor()) {
     player.body.velocity.y = -470;
+    console.log(debugButton.isUp);
   }
+
+  if (debugButton.isDown) {
+    if (player.body.onFloor() && jumpTimer === 0) {
+      jumpTimer = -1;
+      player.body.velocity.y = -350;
+    } else if (jumpTimer < 0 && jumpTimer > -30) {
+      jumpTimer--;
+      player.body.velocity.y = -300 + jumpTimer;
+      console.log(player.body.velocity.y)
+    }
+  } else {
+    jumpTimer = 0;
+  }
+
+  //  holdToJump(); // TODO Fix the awkward delay.
 
   // =======================================================
   // Mock "Fly mode" for debugging
-/*  if (debugButton.isDown) {
-      player.body.velocity.y = -200;
-    }
-*/
+  /*  if (debugButton.isDown) {
+        player.body.velocity.y = -200;
+      }
+  */
+}
+
+
+// ===========================================================
+// works but the delay feels awkward.
+function holdToJump() {
+
+  if (player.body.onFloor() && debugButton.isDown && jumpTimer > -200) {
+    jumpTimer -= 3;
+    console.log("doing jumptimer stuff");
+  }
+  if (debugButton.isUp && jumpTimer < 0) {
+    player.body.velocity.y = (-400 + jumpTimer);
+    jumpTimer = 0
+    console.log("button Up");
+  }
+
 }

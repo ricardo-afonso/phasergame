@@ -1,30 +1,13 @@
-var game = new Phaser.Game(800, 600, Phaser.AUTO, "Ricardo's Quest", {
+var game = new Phaser.Game(960, 600, Phaser.AUTO, "game", {
   preload: preload,
   create: create,
   update: update,
   render: render
 });
 
-// ==================================================================
-// Relevant vars to the game.
+
 var map;
 var tileset;
-
-var groundBg;
-var props;
-var houses;
-var houseProps;
-var npc;
-var ground;
-var areas;
-
-var player;
-var facing = "left";
-var cursors;
-var jumpButton;
-var layers = [];
-
-
 
 function preload() {
   loadAssets();
@@ -40,7 +23,6 @@ function create() {
 
   createMap();
   createPlayer();
-  createSlot();
   createPlayerAnimations();
   createKeys();
 }

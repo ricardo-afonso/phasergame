@@ -23,6 +23,8 @@ var talkingTo = {
   academia: false
 }
 
+var player;
+var facing = "right";
 
 function createPlayer() {
   // ==================================================================

@@ -1,3 +1,5 @@
+var layers = [];
+
 function loadAssets() {
   // ==================================================================
   // Load the necessary assets
@@ -17,9 +19,6 @@ function loadAssets() {
 
 }
 
-function createSlot() {
-  questItems.slot = game.add.tileSprite(30, 30, 70, 70, "slot");
-};
 
 function createMap() {
   // ==================================================================
