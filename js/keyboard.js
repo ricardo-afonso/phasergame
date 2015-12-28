@@ -55,12 +55,13 @@ function playerMovement() {
     }
   }
 
+/*  Old jump
   if (jumpButton.isDown && player.body.onFloor()) {
     player.body.velocity.y = -470;
     console.log(debugButton.isUp);
   }
-
-  if (debugButton.isDown) {
+*/
+  if (jumpButton.isDown) {
     if (player.body.onFloor() && jumpTimer === 0) {
       jumpTimer = -1;
       player.body.velocity.y = -350;
@@ -82,6 +83,8 @@ function playerMovement() {
       }
   */
 }
+
+
 
 
 // ===========================================================
