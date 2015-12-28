@@ -1,6 +1,10 @@
 ## Ricardo's Game
 Learning phaser in about 3 days.
 
+#### Controls:
+* Cursor keys - Move Left and right
+* Spacebar - Jump ( Hold to jump higher)
+
 ### Alpha version
 ####v0.1
 The first working version of the game. Still some bugfixes to do
