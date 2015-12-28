@@ -7,8 +7,8 @@ The first working version of the game. Still some bugfixes to do
 
 ####v0.2
 ######Bugfixes and changes:
-*centered game screen
-*wider game window
-*dark background on the webpage
-*new jump - hold to jump higher
-*other minor bugfixes
+* centered game screen
+* wider game window
+* dark background on the webpage
+* new jump - hold to jump higher
+* other minor bugfixes
