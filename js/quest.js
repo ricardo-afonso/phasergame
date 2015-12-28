@@ -51,7 +51,7 @@ function update() {
   playerMovement();
   checkPlayerDeath();
   /*
-    if (newButton.isDown) {
+    if (debugButton.isDown) {
       for (i = 0; i < layers.length; i++) {
         console.log(i + ": -> " + layers[i].layer.name)
       }

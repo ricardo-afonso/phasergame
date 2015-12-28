@@ -3,8 +3,7 @@ function createKeys() {
   // Create game buttons
   cursors = game.input.keyboard.createCursorKeys();
   jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
-  newButton = game.input.keyboard.addKey(Phaser.Keyboard.C);
-  destroyb = game.input.keyboard.addKey(Phaser.Keyboard.B);
+  debugButton = game.input.keyboard.addKey(Phaser.Keyboard.C);
 }
 
 
@@ -14,7 +13,7 @@ function playerMovement() {
   player.body.velocity.x = 0; // makes the player stop if no key is being pressed
 
   if (cursors.left.isDown) {
-    player.body.velocity.x = -750;
+    player.body.velocity.x = -650;
     player.animations.play("left");
 
     if (facing != "left") {
@@ -27,7 +26,7 @@ function playerMovement() {
     }
 
   } else if (cursors.right.isDown) {
-    player.body.velocity.x = 750;
+    player.body.velocity.x = 650;
     player.animations.play("right");
 
     if (facing != "right") {
@@ -56,10 +55,10 @@ function playerMovement() {
     player.body.velocity.y = -470;
   }
 
-  //  Mock "Fly mode" for debugging
-  //
-  //if (newButton.isDown) {
-  //    player.body.velocity.y = -200;
-  //  }
-
+  // =======================================================
+  // Mock "Fly mode" for debugging
+/*  if (debugButton.isDown) {
+      player.body.velocity.y = -200;
+    }
+*/
 }

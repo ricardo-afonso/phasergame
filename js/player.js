@@ -67,11 +67,11 @@ function claudiaArea() {
     if (!talkingTo.claudia) {
       talkingTo.claudia = true;
       if (questItems.ball == null) {
-        text = game.add.text(player.x - 300, player.y - 150, claudia.before, textStyle);
+        text = game.add.text(player.x - 150, player.y - 150, claudia.before, textStyle);
         questItems.guitar = game.add.tileSprite(30, 30, 70, 70, "guitar");
         questItems.guitar.fixedToCamera = true;
       } else {
-        text = game.add.text(player.x - 300, player.y - 150, claudia.after, textStyle);
+        text = game.add.text(player.x , player.y - 150, claudia.after, textStyle);
       }
     }
   }
@@ -92,9 +92,11 @@ function daniArea() {
       if (questItems.guitar == null) {
         text = game.add.text(player.x - 300, player.y - 150, daniel.before, textStyle);
       } else {
-        questItems.guitar.destroy();
-        questItems.ball = game.add.tileSprite(30, 30, 70, 70, "ball");
-        questItems.ball.fixedToCamera = true;
+        if (questItems.ball == null) {
+          questItems.guitar.destroy();
+          questItems.ball = game.add.tileSprite(30, 30, 70, 70, "ball");
+          questItems.ball.fixedToCamera = true;
+        }
         text = game.add.text(player.x - 300, player.y - 150, daniel.after, textStyle);
       }
     }
@@ -112,9 +114,11 @@ function antoArea() {
       if (questItems.ball == null) {
         text = game.add.text(player.x - 300, player.y - 150, anto.before, textStyle);
       } else {
-        questItems.ball.destroy();
-        questItems.ladder = game.add.tileSprite(30, 30, 70, 70, "ladder");
-        questItems.ladder.fixedToCamera = true;
+        if (questItems.ladder == null) {
+          questItems.ball.destroy();
+          questItems.ladder = game.add.tileSprite(30, 30, 70, 70, "ladder");
+          questItems.ladder.fixedToCamera = true;
+        }
         text = game.add.text(player.x - 300, player.y - 150, anto.after, textStyle);
       }
     }
@@ -132,9 +136,11 @@ function lopoArea() {
       if (questItems.ladder == null) {
         text = game.add.text(player.x - 300, player.y - 150, lopo.before, textStyle);
       } else {
-        questItems.ladder.destroy();
-        questItems.beer = game.add.tileSprite(30, 30, 70, 70, "beer");
-        questItems.beer.fixedToCamera = true;
+        if (questItems.beer == null) {
+          questItems.ladder.destroy();
+          questItems.beer = game.add.tileSprite(30, 30, 70, 70, "beer");
+          questItems.beer.fixedToCamera = true;
+        }
         text = game.add.text(player.x - 300, player.y - 150, lopo.after, textStyle);
       }
     }
@@ -154,8 +160,8 @@ function campeloArea() {
       if (questItems.beer == null) {
         text = game.add.text(player.x - 300, player.y - 150, campelo.before, textStyle);
       } else {
-        questItems.beer.destroy();
-        if (questItems.surf == null) {
+        if (questItems.key == null) {
+          questItems.beer.destroy();
           questItems.key = game.add.tileSprite(30, 30, 70, 70, "key");
           questItems.key.fixedToCamera = true;
         }
@@ -178,9 +184,11 @@ function surfArea() {
         text = game.add.text(player.x - 300, player.y + 150, surf.before, textStyle);
       } else {
         if (questItems.searching) {
-          questItems.key.destroy();
-          questItems.surf = game.add.tileSprite(30, 30, 70, 70, "surf");
-          questItems.surf.fixedToCamera = true;
+          if (questItems.surf == null) {
+            questItems.key.destroy();
+            questItems.surf = game.add.tileSprite(30, 30, 70, 70, "surf");
+            questItems.surf.fixedToCamera = true;
+          }
           text = game.add.text(player.x - 300, player.y + 150, surf.after, textStyle);
         }
       }
@@ -199,13 +207,14 @@ function academiaArea() {
       if (questItems.key == null) {
         text = game.add.text(player.x - 500, player.y - 150, academia.before, textStyle);
       } else {
+
         if (questItems.surf == null) {
           questItems.searching = true;
           text = game.add.text(player.x - 500, player.y - 150, academia.after, textStyle);
         } else {
-          questItems.surf.destroy();
           text = game.add.text(player.x - 500, player.y - 150, academia.after2, textStyle);
-          //TODO Change the state of game to a game over screen.
+
+          //TODO Change the state of game to a You win! screen.
         }
       }
     }
